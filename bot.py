@@ -3,13 +3,6 @@ import os
 import requests
 from requests_oauthlib import OAuth1
 
-# This bot should make the first scheduled post at:
-# 2026-04-02 22:00 America/Los_Angeles
-# and that post should be "Nope. Day 669."
-#
-# GitHub Actions cron runs in UTC.
-# 2026-04-02 22:00 PDT = 2026-04-03 05:00 UTC
-
 FIRST_POST_UTC = datetime(2026, 4, 3, 5, 0, 0, tzinfo=timezone.utc)
 FIRST_DAY_NUMBER = 669
 
