@@ -3,6 +3,8 @@ import os
 import requests
 from requests_oauthlib import OAuth1
 
+# First automatic post target:
+# April 3, 2026 at 5:00 UTC should be Day 669
 FIRST_POST_UTC = datetime(2026, 4, 3, 5, 0, 0, tzinfo=timezone.utc)
 FIRST_DAY_NUMBER = 669
 
@@ -14,6 +16,10 @@ def main():
     now_utc = datetime.now(timezone.utc)
     day_number = get_day_number(now_utc)
     tweet_text = f"Nope. Day {day_number}."
+
+    print("Now UTC:", now_utc)
+    print("Day number:", day_number)
+    print("Tweet text:", tweet_text)
 
     auth = OAuth1(
         os.environ["X_API_KEY"],
